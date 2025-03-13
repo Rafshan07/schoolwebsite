@@ -1,0 +1,243 @@
+@import '../use/button';
+@import '../use/color';
+
+/* Search Bar Styling */
+.guru-cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px;
+}
+
+.guru-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 425px;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    background: $white-color;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 10px;
+}
+
+.guru-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.guru-card-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 16px; /* Converted 1rem to 16px */
+}
+
+.guru-card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.guru-card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 8px; 
+    font-family: $primary-font;
+}
+
+.guru-card-text {
+    font-size: 14px; /* Converted 0.9rem to 14px */
+    line-height: 1.4;
+    color: black;
+    margin: 3px 0; /* Converted 0.2rem to 3px */
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+  .page-link {
+    background-color: $third-color;
+    color: $white-color;
+    padding: 8px 12px;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+
+    &:hover,
+    &.active {
+      background-color: $primary-color;
+      color: $white-color;
+    }
+  }
+}
+
+/* Pagination Styling */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 16px; /* Converted 1rem to 16px */
+    gap: 8px; /* Converted 0.5rem to 8px */
+}
+
+.pagination .page-item {
+    list-style: none;
+}
+
+.pagination .page-item .page-link {
+    border-radius: 50%; 
+    width: 45px; 
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid whitesmoke; 
+    color: #555; 
+    font-weight: 500; 
+    background: $white-color;
+    transition: all 0.3s ease; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.pagination .page-item .page-link:hover {
+    background-color: $primary-color;
+    color: $white-color; 
+    border-color: $primary-color; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-3px); 
+}
+
+.pagination .page-item.active .page-link {
+    background-color: $primary-color; 
+    color: whitesmoke; 
+    border-color: $primary-color; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    cursor: default; 
+}
+
+.pagination .page-item.disabled .page-link {
+    background-color:$white-color; 
+    color: #aaa; 
+    border-color: #ddd; 
+    pointer-events: none; 
+    box-shadow: none; 
+}
+
+
+
+/* Responsive Styles */
+
+/* For Tablets (max-width: 991px) */
+@media (max-width: 991px) {
+    .guru-cards-grid {
+        gap: 16px; /* Reduced gap for tablet */
+    }
+
+    .guru-card {
+        width: 250px; /* Reduced card width for tablet */
+        height: 375px; /* Adjusted card height for tablet */
+    }
+
+    .guru-card-img {
+        height: 200px; /* Reduced image height for tablet */
+    }
+
+    .guru-card-title {
+        font-size: 18px; /* Reduced font size for tablet */
+        margin-bottom: 6px; /* Reduced margin */
+    }
+
+    .guru-card-text {
+        font-size: 13px; /* Adjusted text size for tablet */
+        margin: 2px 0; /* Reduced margin */
+    }
+
+    .pagination {
+        padding-top: 12px; /* Adjusted padding for tablet */
+    }
+
+    .pagination .page-link {
+        padding: 6px 10px; /* Adjusted padding for pagination links */
+        font-size: 14px; /* Smaller pagination font for tablet */
+    }
+}
+
+/* For Mobile (max-width: 767px) */
+@media (max-width: 767px) {
+    .guru-cards-grid {
+        gap: 12px; /* Smaller gap for mobile */
+    }
+
+    .guru-card {
+        width: 100%; /* Full width for mobile */
+        height: auto; /* Auto height to accommodate smaller screens */
+        padding: 15px; /* Added padding for better spacing */
+    }
+
+    .guru-card-img {
+        height: 170px; /* Reduced image height for mobile */
+    }
+
+    .guru-card-title {
+        font-size: 16px; /* Reduced title font size for mobile */
+        margin-bottom: 5px; /* Reduced margin */
+    }
+
+    .guru-card-text {
+        font-size: 12px; /* Smaller text size for mobile */
+        margin: 2px 0; /* Adjusted margin */
+    }
+
+    .pagination {
+        flex-wrap: wrap; /* Allow pagination items to wrap on smaller screens */
+        gap: 4px; /* Smaller gap for pagination items */
+    }
+
+    .pagination .page-link {
+        width: 40px; /* Adjusted width for smaller pagination items */
+        height: 40px; /* Adjusted height for pagination items */
+        font-size: 14px; /* Reduced font size for mobile */
+    }
+}
+
+/* For Extra Small Mobile (max-width: 576px) */
+@media (max-width: 576px) {
+    .guru-card {
+        width: 100%; /* Full width for smaller devices */
+        height: auto; /* Auto height for better content fitting */
+        padding: 10px; /* Adjusted padding for smaller screens */
+    }
+
+    .guru-card-img {
+        height: 140px; /* Reduced image height for small screens */
+    }
+
+    .guru-card-title {
+        font-size: 14px; /* Smaller title font size for small screens */
+    }
+
+    .guru-card-text {
+        font-size: 11px; /* Even smaller text size for small screens */
+    }
+
+    .pagination .page-link {
+        width: 35px; /* Smaller width for pagination items */
+        height: 35px; /* Smaller height for pagination items */
+        font-size: 12px; /* Smaller font size for pagination items */
+    }
+}

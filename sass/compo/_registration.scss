@@ -1,0 +1,163 @@
+// ====================== HERO CONTENT (Responsive) ======================
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; // Default: Left Align
+  align-items: flex-start;
+  text-align: left;
+
+  @media (max-width: 992px) { // Tablets and below
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+// Registration Page Special Styling
+.registration-page .hero-content {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+// Center Registration Title (Only for registration page)
+.registration-page .registration {
+  max-width: 800px;
+}
+
+// ====================== UPPER LEFT DOWNLOAD BOX (Responsive) ======================
+.hero-left {
+  position: absolute;
+  top: -120px;
+  left: 30px;
+  display: flex;
+  gap: 15px; // Space between buttons
+
+  @media (max-width: 768px) { // Mobile devices
+    flex-direction: column;
+    left: 50%;
+    top: -80px;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  .download-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: 0.3s;
+
+    p {
+      color: white;
+      margin: 0;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    a {
+      color: white;
+      font-size: 18px;
+      transition: 0.3s;
+
+      &:hover {
+        color: #2ba7e2;
+      }
+    }
+  }
+}
+
+// ====================== TRANSPARENT BUTTON RIGHT SIDE (Responsive) ======================
+.hero-right {
+  position: absolute;
+  top: -120px;
+  right: 320px;
+
+  @media (max-width: 992px) { // Tablets and below
+    right: 50%;
+    transform: translateX(50%);
+    top: -80px;
+  }
+
+  .transparent-btn {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 15px 80px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background: white;
+      color: black;
+    }
+
+    @media (max-width: 768px) { // Mobile devices
+      padding: 12px 50px;
+      font-size: 16px;
+    }
+  }
+}
+
+// ====================== INFO SECTION (Responsive) ======================
+.info-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
+}
+
+.info-card {
+  width: 100%;
+  max-width: 1400px; // Set max width
+  height: 500px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (max-width: 992px) {
+    height: auto;
+  }
+}
+
+.info-header {
+  font-size: 40px;
+  padding: 15px;
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+    padding: 10px;
+  }
+}
+
+.info-body {
+  font-size: 16px;
+  padding: 15px;
+  text-align: center;
+  height: 100%;
+
+  p {
+    font-size: 25px;
+    line-height: 2;
+
+    @media (max-width: 992px) {
+      font-size: 20px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+  }
+}

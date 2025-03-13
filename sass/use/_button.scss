@@ -1,0 +1,129 @@
+.btn {
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    background-color: $primary-color;
+    color: white; 
+    border: 2px solid $primary-color; 
+    border-radius: 20px;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    margin-top: 15px;
+    width: 250px;
+}
+
+.btn:hover {
+    background-color: $ho-color;
+    border-color: $ho-color;
+    transform: translateY(-5px) scale(1.05); /* Slightly increase size */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    font-weight: 700; /* Increase weight */
+}
+
+.btn i {
+    margin-left: 15px;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all 0.4s ease;
+    font-size: 1.4rem;
+    transition-delay: 0.2s;
+}
+
+/* Hover effect for the icon */
+.btn:hover i {
+    opacity: 1;
+    transform: translateX(0);
+    font-size: 1.6rem;
+}
+
+/* Glow effect */
+.btn:hover {
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.6);
+}
+
+
+
+
+
+
+
+// card
+
+/* Card Styling */
+.custom-card {
+    background: $white-color;
+    border-radius: 12px;
+    transition: transform 0.3s ease-out, box-shadow 0.4s ease-out, border-color 0.3s ease-out;
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid transparent;
+    padding: 1.5rem;
+}
+
+/* Advanced Card Hover Effect */
+.custom-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0px 12px 30px rgba(0, 123, 255, 0.2);
+    border-color: $medium-dark;
+}
+
+/* Icon Styling */
+.icon-img {
+    width: 50px;
+    transition: transform 0.4s ease-in-out, filter 0.4s ease-in-out;
+}
+
+/* Icon Hover Effect (Rotation & Glow) */
+.custom-card:hover .icon-img {
+    transform: rotate(10deg) scale(1.3);
+    filter: drop-shadow(0px 0px 10px rgba(0, 123, 255, 0.5));
+}
+
+/* Title Styling */
+.card-title {
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+}
+
+/* Advanced Title Hover Effect */
+.card-title:hover {
+    color: $primary-color;
+}
+
+/* Gradient Underline Effect */
+.card-title::after {
+    content: '';
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(to right, #007bff, #00c6ff);
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.4s ease-in-out;
+}
+
+.card-title:hover::after {
+    width: 100%;
+}
+
+/* Responsive Improvements */
+@media (max-width: 768px) {
+    .custom-card {
+        padding: 1rem;
+    }
+
+    .icon-img {
+        width: 40px;
+    }
+}

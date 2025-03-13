@@ -1,0 +1,399 @@
+@import "../use/button";
+@import "../use/color";
+// Swiper Container - Adjust for 1400px Screens
+.slider-title {
+  font-size: 40px;
+  text-transform: uppercase;
+  color: $white-color;
+  font-family: $primary-font;
+  font-weight: bold;
+}
+
+.mySwiper {
+  width: 100%; // Adjust to fit well on 1400px screens
+  max-width: 1400px;
+  padding: 20px 0;
+  position: relative;
+
+  .swiper-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px !important; // Adjust width for larger screens
+    height: 350px !important;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    padding-bottom: 15px;
+
+    img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      padding-left: 20px;
+    }
+
+    .photo-caption {
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      margin-top: 8px;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+// Navigation Buttons Styling
+.swiper-button-prev,
+.swiper-button-next {
+  background: rgba(1, 147, 220, 0.5);
+  width: 60px;
+  height: 60px;
+  color: white;
+  transition: 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: $primary-color;
+    color: black;
+  }
+}
+
+// Positioning arrows inside images
+.swiper-button-prev {
+  position: absolute;
+  left: -30px; // Closer to image
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.swiper-button-next {
+  position: absolute;
+  right: -30px; // Closer to image
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// Adjusting for larger screens
+@media screen and (min-width: 1200px) {
+  .swiper-slide {
+    width: 350px !important;
+    height: 400px !important;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .swiper-slide {
+    width: 400px !important;
+    height: 450px !important;
+  }
+}
+
+// Adjustments for smaller screens (tablet, mobile)
+@media screen and (max-width: 768px) {
+  .mySwiper {
+    padding: 10px 0;
+  }
+
+  .swiper-slide {
+    width: 250px !important;
+    height: 300px !important;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .swiper-slide {
+    width: 200px !important;
+    height: 250px !important;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.school-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 30px 15px;
+  text-align: center;
+
+  .school-title {
+    font-size: $text-one;
+    font-weight: bold;
+    color: $secondary-color;
+    margin-bottom: 30px;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  // Sidebar (Left)
+  .school-sidebar {
+    background-color: $primary-color;
+    color: $white-color;
+    border-radius: 10px;
+    height: 995px; // Fixed height
+    width: 300px; // Fixed width
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    // Add spacing between child elements
+
+    .icons {
+      width: 60px;
+      height: 60px;
+      background-color: $white-color;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto; // Center horizontally
+
+      img {
+        width: 60%;
+        height: auto;
+      }
+    }
+
+    .content-wrapper {
+      flex-grow: 1; // Ensures content takes available space
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 15px; // Spacing between elements inside wrapper
+    }
+
+    h5 {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      font-family: $primary-font;
+    }
+
+    p {
+      font-size: $text-two;
+      margin-bottom: 90px;
+      font-family: $primary-font;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .school-sidebar {
+      display: none;
+    }
+  }
+
+  // Right Section (Cards)
+  .school-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center; // Center all cards
+    flex: 2;
+    max-width: 800px; // Enough space for 3 cards per row
+    padding-left: 30px;
+
+    .school-card {
+      background-color: #f9fbfd;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 250px; // Fixed width
+      height: 300px; // Fixed height
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; // Center content inside card
+      transition: transform 0.3s ease, box-shadow 0.3s ease,
+        background-color 0.3s ease;
+
+      // Hover Effect
+      &:hover {
+        transform: scale(1.05); // Slight zoom
+        box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2); // Stronger shadow
+        background-color: $primary-color; // Slightly lighter background
+      }
+
+      .icons {
+        width: 70px;
+        height: 70px;
+        background-color: $white-color;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+
+        img {
+          width: 60%;
+          height: auto;
+        }
+      }
+
+      h6 {
+        font-size: 16px;
+        font-weight: bold;
+        color: $secondary-color;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+
+      p {
+        font-size: $text-two;
+        color: $third-color;
+        transition: color 0.3s ease;
+      }
+    }
+  }
+
+  // Responsive Design
+  @media (max-width: 1024px) {
+    // Tablets
+    .school-cards {
+      max-width: 600px; // Adjust width
+      gap: 30px;
+
+      .school-card {
+        width: 45%; // 2 cards per row
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    // Mobile
+    .school-cards {
+      max-width: 100%; // Full width
+      gap: 20px;
+
+      .school-card {
+        width: 90%; // 1 card per row
+      }
+    }
+  }
+}
+
+.numberofstudent {
+  // Section Title Styling
+  .section-title {
+    font-size: 25px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    font-family: $primary-font;
+  }
+
+  // Table General Styling
+  .table {
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    overflow: hidden;
+
+    th,
+    td {
+      padding: 12px;
+      font-size: 14px;
+    }
+
+    thead {
+      font-weight: bold;
+      font-family: $primary-font;
+    }
+  }
+
+  // "Jumlah Siswa" Table Styling
+  .student-table {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    .table-year {
+      background-color: #4c79ff;
+      color: white;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .table-years {
+      background-color: $primary-color;
+      color: white;
+      border-radius: 5px;
+    }
+
+    .table-primary {
+      background-color: #e3f2fd !important;
+      color: #333 !important;
+    }
+  }
+
+  // "Data Ruang Kelas" Styling
+  .classroom-data {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    .table-primary {
+      background-color: #3b82f6 !important;
+      color: white !important;
+    }
+  }
+
+  // Data Ruang Kelas Detail Table
+  .table-primary {
+    background-color: #e3f2fd;
+    color: #333;
+  }
+
+  // Responsive Adjustments
+  @media (max-width: 768px) {
+    .table {
+      font-size: 12px;
+
+      th,
+      td {
+        padding: 8px;
+      }
+    }
+
+    .table-year {
+      font-size: 14px;
+    }
+
+    .section-title {
+      font-size: 18px;
+    }
+  }
+}

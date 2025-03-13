@@ -1,0 +1,286 @@
+@import "../use/color";
+@import "../use/button";
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* When scrolled, make it slightly darker */
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.85); /* Darker on scroll */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand img {
+  width: 50px;
+}
+
+.nav-link {
+  color:$medium-dark;
+  font-weight: 800;
+  transition: all 0.3s ease;
+  font-size: 20px;
+}
+
+/* Change link colors when navbar is scrolled */
+.navbar.scrolled .nav-link {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar.scrolled .nav-link.active {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+/* Hero Section */
+.hero {
+  position: relative;
+  background: url("../../assets/img/banar_home.jpg") no-repeat center center;
+  background-size: cover;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  color: white;
+  padding-left: 10%;
+  padding-top: 100px;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+  text-align: left;
+}
+
+.hero-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: left;
+  line-height: 60px;
+}
+
+.hero-title {
+  font-family: $primary-font;
+  color: $medium-dark;
+  font-size: 25px;
+}
+
+// responsive
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 0; /* Reduce navbar padding */
+  }
+
+  .navbar-brand img {
+    width: 40px;
+  }
+
+  /* Navbar Toggler Icon */
+  .navbar-toggler {
+    border: none; /* Remove default border */
+    color: transparent;
+  }
+
+  .navbar-toggler-icon {
+    width: 35px; /* Icon width */
+    height: 25px; /* Icon height */
+    position: relative; /* To position the lines inside */
+    background-color: transparent; /* Transparent background */
+  }
+
+  .navbar-toggler-icon::before,
+  .navbar-toggler-icon::after,
+  .navbar-toggler-icon div {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px; /* Thickness of the bars */
+    background-color: #fff; /* White color for the bars */
+    transition: all 0.3s ease; /* Smooth transition for animation */
+  }
+
+  .navbar-toggler-icon::before {
+    top: 0; /* Position the top bar */
+    left: 0;
+  }
+
+  .navbar-toggler-icon::after {
+    bottom: 0; /* Position the bottom bar */
+    left: 0;
+  }
+
+  .navbar-toggler-icon div {
+    top: 50%; /* Center the middle bar */
+    left: 0;
+    transform: translateY(-50%); /* Center the middle bar vertically */
+  }
+
+  .navbar-toggler.collapsed .navbar-toggler-icon::before {
+    transform: rotate(45deg); /* Rotate top bar to form a cross */
+    top: 50%; /* Move it down */
+  }
+
+  .navbar-toggler.collapsed .navbar-toggler-icon::after {
+    transform: rotate(-45deg); /* Rotate bottom bar to form a cross */
+    bottom: 50%; /* Move it up */
+  }
+
+  .navbar-toggler.collapsed .navbar-toggler-icon div {
+    opacity: 0; /* Hide the middle bar when toggled */
+  }
+
+  /* Hover Effects */
+  .navbar-toggler-icon:hover::before,
+  .navbar-toggler-icon:hover::after,
+  .navbar-toggler-icon:hover div {
+    background-color: $medium-dark; /* Change color to blue on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+  }
+
+  .navbar-collapse {
+    background-color: #101524; /* Dark background when expanded */
+    border-radius: 5px;
+    padding: 15px;
+  }
+
+  .nav-item {
+    margin: 5px 0; /* Add space between nav items */
+    text-align: center;
+  }
+
+  .nav-link {
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+
+  .hero {
+    padding-left: 5%; /* Less padding on smaller screens */
+    padding-top: 40px; /* Adjust padding for hero content */
+  }
+
+  .hero-text {
+    font-size: 20px; /* Smaller font size for mobile screens */
+    line-height: 30px; /* Adjust line height for readability */
+  }
+
+  .hero-title {
+    font-size: 20px; /* Smaller font size for hero subtitle */
+  }
+
+  .hero-btn {
+    font-size: 1rem; /* Adjust button size for smaller screens */
+    padding: 8px 18px;
+  }
+
+  .nav-link.active {
+    font-size: 18px;
+  }
+
+  .btn {
+    font-size: 10px; /* Adjust button font size */
+  }
+}
+
+/* For tablet screens */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .navbar {
+    padding: 12px 0;
+  }
+
+  .navbar-brand img {
+    width: 45px; /* Medium logo for tablets */
+  }
+
+  .hero {
+    padding-left: 8%;
+    padding-top: 90px;
+  }
+
+  .hero-text {
+    font-size: 2.2rem;
+    line-height: 50px;
+  }
+
+  .hero-title {
+    font-size: 22px;
+  }
+
+  .hero-btn {
+    font-size: 1.1rem;
+    padding: 10px 22px;
+  }
+
+  .nav-link {
+    font-size: 18px;
+  }
+}
+
+// hero-three
+
+.hero3 h2 {
+  font-size: 50px;
+  font-weight: 700;
+  color: black;
+  font-family: $primary-font;
+}
+
+.hero3 p {
+  font-size: 20px;
+  color: #555;
+  font-family: $primary-font;
+}
+
+/* Tablet View: 2 Cards per Row */
+@media (max-width: 1024px) {
+  .custom-card-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+/* Mobile View: 2 Cards per Row with Adjustments */
+@media (max-width: 768px) {
+  .custom-card-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .custom-card {
+    padding: 1rem;
+  }
+
+  .icon-img {
+    width: 40px;
+  }
+}
+
+
+
+
+  
+
+
+
+
+  

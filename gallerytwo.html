@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- font link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- front link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Yeseva+One&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- navber -->
+    <div id="header-placeholder"></div>
+
+
+    <div class="main-container">
+        <img class="mainbanner" src="./assets/img/banar_home.jpg" alt="Banner">
+
+        <!-- About Hero Text -->
+        <div
+            class="container-fluid navoheader-section position-absolute start-50 translate-middle text-center text-white">
+            <div class="container">
+                <h6 class="main-title">Gallery ( Sanlat )</h6>
+            </div>
+        </div>
+    </div>
+    <section id="gallery2-section" class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card-two shadow-sm" onclick="openImage(this)" data-bs-toggle="modal"
+                        data-bs-target="#imageModal">
+                        <img src="./assets/img/gallaryone.png" class="card-img-top-two" alt="Gallery Image 1">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-two shadow-sm" onclick="openImage(this)" data-bs-toggle="modal"
+                        data-bs-target="#imageModal">
+                        <img src="./assets/img/gallarytwo.png" class="card-img-top-two" alt="Gallery Image 2">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-two shadow-sm" data-bs-toggle="modal" data-bs-target="#imageModal"
+                        onclick="openImage(this)">
+                        <img src="./assets/img/gallarythree.png" class="card-img-top-two" alt="Gallery Image 3">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-two shadow-sm" data-bs-toggle="modal" data-bs-target="#imageModal"
+                        onclick="openImage(this)">
+                        <img src="./assets/img/gallaryfour.png" class="card-img-top-two" alt="Gallery Image 3">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-two shadow-sm" data-bs-toggle="modal" data-bs-target="#imageModal"
+                        onclick="openImage(this)">
+                        <img src="./assets/img/gallaryfive.png" class="card-img-top-two" alt="Gallery Image 3">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-two shadow-sm" data-bs-toggle="modal" data-bs-target="#imageModal"
+                        onclick="openImage(this)">
+                        <img src="./assets/img/gallarysix.png" class="card-img-top-two" alt="Gallery Image 3">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-two shadow-sm" data-bs-toggle="modal" data-bs-target="#imageModal"
+                        onclick="openImage(this)">
+                        <img src="./assets/img/gallaryseven.png" class="card-img-top-two" alt="Gallery Image 3">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-two shadow-sm" data-bs-toggle="modal" data-bs-target="#imageModal"
+                        onclick="openImage(this)">
+                        <img src="./assets/img/gallaryeight.png" class="card-img-top-two" alt="Gallery Image 3">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-two shadow-sm" data-bs-toggle="modal" data-bs-target="#imageModal"
+                        onclick="openImage(this)">
+                        <img src="./assets/img/gallaryone.png" class="card-img-top-two" alt="Gallery Image 3">
+                    </div>
+                </div>
+            </div>
+            <nav class="mt-4">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img id="popupImage" class="popup-image" onclick="toggleZoom(event)">
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- footer -->
+    <div id="footer-placeholder"></div>
+
+
+
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="./assets/js/gallary.js"></script>
+    <script src="./assets/js/nav.js"></script>
+</body>
+
+</html>

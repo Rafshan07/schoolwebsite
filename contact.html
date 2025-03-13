@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- font link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- front link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Yeseva+One&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- navber -->
+    <div id="header-placeholder"></div>
+
+
+    <!-- About Banner -->
+    <div class="main-container">
+        <img class="mainbanner" src="./assets/img/banar_home.jpg" alt="Banner">
+
+        <!-- About Hero Text -->
+        <div
+            class="container-fluid navoheader-section position-absolute start-50 translate-middle text-center text-white">
+            <div class="container">
+                <h6 class="main-title">Contact Us</h6>
+                <h2 class="main-text">If you have any questions, feel free to fill out the form below</h2>
+            </div>
+        </div>
+    </div>
+
+    <section id="contact-form" class="form-section">
+        <div class="container d-flex justify-content-center align-items-center">
+            <div class="form-card">
+                <form>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="name" class="form-label">Nama</label>
+                            <input type="text" class="form-control" id="name" placeholder="Name">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="emailkamu@gmail.com">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">No Telp</label>
+                        <input type="text" class="form-control" id="phone" placeholder="+62">
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Isi Pesan</label>
+                        <textarea class="form-control" id="message" rows="4" placeholder="Pesan kamu"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary px-5">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div class="map-container">
+        <div id="map"></div>
+        <div class="map-info">
+            <h3>SMP Negeri 1 Cibadak</h3>
+            <p>Jl. Siliwangi No. 123, Cibadak, Sukabumi, Jawa Barat</p>
+            <p>⭐⭐⭐⭐⭐ 4.6</p>
+        </div>
+    </div>
+
+        <!-- footer -->
+        <div id="footer-placeholder"></div>
+
+
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap" async
+        defer></script>
+
+    <script src="./assets/js/nav.js"></script>
+    <script src="./assets/js/map.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,266 @@
+@import "../use/button";
+@import "../use/color";
+
+.agenda-section {
+  padding-top: 100px;
+
+  .agenda-title {
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    font-family: $primary-font;
+  }
+
+  .agenda-info-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    perspective: 1000px; // Enables 3D depth
+
+    .agenda-info-box {
+      background: $white-color;
+      padding: 30px;
+      width: 250px;
+      height: 250px;
+      text-align: center;
+      border: 2px solid $primary-color;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.5s ease-in-out;
+      transform-style: preserve-3d;
+
+      &:hover {
+        transform: rotateY(5deg) rotateX(5deg) scale(1.08);
+        border-color: #00e1ff;
+        box-shadow: 0 15px 35px rgba(0, 225, 255, 0.4);
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          circle,
+          rgba(0, 191, 255, 0.1),
+          transparent
+        );
+        opacity: 0;
+        transition: opacity 0.4s ease-in-out;
+      }
+
+      &:hover::before {
+        opacity: 1;
+      }
+
+      .agenda-icon {
+        width: 70px;
+        height: 70px;
+        background: #ffffff;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+        img {
+          width: 40px;
+          height: 40px;
+          transition: transform 0.4s ease-in-out;
+        }
+
+        .agenda-info-box:hover & {
+          transform: scale(1.3) translateY(-5px);
+          box-shadow: 0 6px 20px rgba(0, 191, 255, 0.4);
+        }
+
+        .agenda-info-box:hover img {
+          transform: rotateY(180deg); // Image flips on hover
+        }
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: bold;
+        font-family: $primary-font;
+        transition: color 0.3s ease-in-out;
+      }
+
+      p {
+        margin: 5px 0;
+        font-size: 14px;
+        transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+      }
+
+      &:hover p {
+        transform: translateY(-3px);
+        color: red;
+      }
+    }
+  }
+
+  .agenda-details {
+    background-color: #2ba7e2; // Full width background
+    width: 100%;
+    height: 652px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0; // Space above and below
+    margin-top: 60px;
+
+    .container {
+      max-width: 1200px; // Keeps content centered
+    }
+
+    .agenda-text {
+      text-align: left;
+      color: white;
+      font-family: $primary-font;
+
+      p {
+        font-size: 18px;
+        line-height: 1.9;
+      }
+
+      a {
+        color: yellow;
+        text-decoration: underline;
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+          color: white;
+        }
+      }
+
+      .agenda-btn {
+        margin-top: 15px;
+        color: $white-color;
+        background: transparent;
+        border: 1px solid whitesmoke;
+        padding: 12px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+
+        &:hover {
+          background-color: whitesmoke;
+          color: black;
+          transform: scale(1.1);
+          box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+        }
+      }
+    }
+
+    .agenda-image {
+      text-align: center;
+
+      img {
+        width: 100%;
+        max-width: 600px;
+        border-radius: 10px;
+        transition: transform 0.5s ease-in-out, box-shadow 0.4s ease-in-out;
+
+        &:hover {
+          transform: scale(1.1) rotate(3deg);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
+  }
+}
+
+// Responsive for tablets (medium screens)
+@media (max-width: 1024px) {
+  .agenda-info-boxes {
+    gap: 20px; // Reduce gap for medium screens
+  }
+
+  .agenda-info-box {
+    width: 200px;
+    height: auto;
+    padding: 20px;
+  }
+
+  .agenda-details {
+    flex-direction: column; // Stack items on smaller screens
+    text-align: center;
+    height: auto; // Auto height to prevent overflow
+    padding: 40px 20px;
+
+    .agenda-text {
+      padding-right: 0;
+    }
+
+    .agenda-image {
+      display: none;
+    }
+  }
+}
+
+// Responsive for mobile devices
+@media (max-width: 768px) {
+  .agenda-info-boxes {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .agenda-info-box {
+    width: calc(50% - 10px); // Two boxes per row on mobile
+  }
+
+  .agenda-details {
+    flex-direction: column-reverse;
+    padding: 30px 15px;
+
+    .agenda-text {
+      text-align: center;
+      padding: 0 10px;
+    }
+
+    .agenda-btn {
+      width: 100%;
+    }
+
+    .agenda-image {
+      display: none;
+    }
+  }
+}
+
+// Small Mobile Screens (extra small devices)
+@media (max-width: 480px) {
+  .agenda-title {
+    font-size: 28px;
+  }
+
+  .agenda-info-box {
+    width: 100%; // Single column layout
+    height: auto;
+  }
+
+  .agenda-details {
+    padding: 15px;
+  }
+
+  .agenda-text p {
+    font-size: 14px;
+  }
+
+  .agenda-btn {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
